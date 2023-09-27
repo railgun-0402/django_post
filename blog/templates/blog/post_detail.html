@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %} {% block content %}
+<h1 class="title">{{post.title}}</h1>
+<small>Posted at {{post.posted_date}}</small>
+<p>{{post.intro}}</p>
+<p>{{post.body}}</p>
+<hr />
+
+{% comment %} コメントされたもの {% endcomment %}
+<h2 class="subtitle">コメント</h2>
+
+{% for comment in post.comments.all %}
+<article class="media-content">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>
+          {{comment.name}}
+          <small>{{comment.posted_date}}</small>
+        </strong>
+        <br />
+        {{comment.body}}
+      </p>
+    </div>
+  </div>
+  <hr />
+</article>
+{% empty %}
+<div class="notification">
+  <p>コメントはまだありません。</p>
+</div>
+{% endfor %} {% comment %}コメント投稿エリア {% endcomment %}
+<h2 class="subtitle">コメントを追加</h2>
+
+<form action="." method="post">
+  {% csrf_token %} {{form.as_p}}
+  <div class="field">
+    <div class="control">
+      <button class="button is-danger">送信</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
