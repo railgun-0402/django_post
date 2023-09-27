@@ -7,7 +7,7 @@ Djangoの入門として、簡単な投稿サイトをとある動画を元に�
 
 https://www.youtube.com/watch?v=O037g3NOoXY
 
-## 使用API、ライブラリ
+## 開発環境
 ・Python3.7
 
 ・Django4.2
