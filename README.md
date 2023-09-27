@@ -9,4 +9,5 @@ https://www.youtube.com/watch?v=O037g3NOoXY
 
 ## 使用API、ライブラリ
 ・Python3.7
+
 ・Django4.2
